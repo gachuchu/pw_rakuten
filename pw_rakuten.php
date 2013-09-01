@@ -257,6 +257,13 @@ if(!class_exists('PW_Rakuten')){
             $dd .= '</li>';
             $dd .= '</ul>';
 
+            // ライセンス
+            $credit  = "\n";
+            $credit .= '<!-- Rakuten Web Services Attribution Snippet FROM HERE -->' . "\n";
+            $credit .= '<a href="http://webservice.rakuten.co.jp/" target="_blank"><img src="http://webservice.rakuten.co.jp/img/credit/200709/credit_22121.gif" border="0" alt="楽天ウェブサービスセンター" title="楽天ウェブサービスセンター" width="221" height="21"/></a>' . "\n";
+            $credit .= '<!-- Rakuten Web Services Attribution Snippet TO HERE -->' . "\n";
+            $dd .= "<p>{$credit}</p>";
+
             $dd .= '</dd>';
 
             // 返却情報を作成

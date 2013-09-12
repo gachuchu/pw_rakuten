@@ -36,8 +36,9 @@ if(!class_exists('PW_Rakuten')){
      *********************************************************************/
     class PW_Rakuten extends libpw_Plugin_Substance {
         //---------------------------------------------------------------------
-        const UNIQUE_KEY = 'PW_Rakuten';
-        const CLASS_NAME = 'PW_Rakuten';
+        const UNIQUE_KEY  = 'PW_Rakuten';
+        const CLASS_NAME  = 'PW_Rakuten';
+        const ENCRYPT_KEY = '';
 
         //---------------------------------------------------------------------
         private $opt;
@@ -53,7 +54,8 @@ if(!class_exists('PW_Rakuten')){
                                                     array(
                                                         libpw_Rakuten_API::APP_ID       => '',
                                                         libpw_Rakuten_API::AFFILIATE_ID => '',
-                                                        )
+                                                        ),
+                                                    self::ENCRYPT_KEY
                                                     );
 
             // api作成
@@ -267,7 +269,7 @@ if(!class_exists('PW_Rakuten')){
             $dd .= '</dd>';
 
             // 返却情報を作成
-            return "<dl class=\"rakuten ad\">{$dt}{$dd}</dl>";
+            return "<dl class=\"rakuten ad\" data-ad-kind=\"rakuten\" data-ad-name=\"{$price}円:" . htmlspecialchars($name) . "\">{$dt}{$dd}</dl>";
         }
     }
 
